@@ -9,6 +9,11 @@
         		items: [
         			Ext.create("Ext.form.field.Text", {
         				fieldLabel: "FieldLabel",
+                        /*
+                            All components have a dynamically generated id, but you can assign your own as follows
+                            though this is not recommended because as the application is growing you can have
+                            duplicated id's
+                        */    
         				id: "myFieldLabel"
         			}),
         			Ext.create("Ext.Button", {
@@ -18,8 +23,51 @@
         				}
         			})
         		],
-        		renderTo: Ext.getBody()
-        	});
+                /*
+                    renderTo is used to indicate where a component is going to be displayed, two common ways to use it are:
+                        1. renderTo: Ext.getBody()
+                        2. renderTo: Ext.get(componentId)
+                */
+        		renderTo: Ext.getBody();
+
+                /*
+                    There's also a set of modifiers that can be used with components through dot notation:
+                        1. "up" this can be used in two ways:
+                            1.1. component.up("Panel"); //Will return the first Panel component in the hierarchy of the component
+                            1.2. component.up(); //this will return the immediate parent of the component
+                        2. "enable | disable" used to enable or disable components
+                            2.1. component.enable();
+                            2.2. component.disable();
+                        3. "show | hide" used to display or hide a component
+                            3.1. component.hide();
+                            3.2. component.show();
+                        4. "destroy" removes the component from the DOM tree
+                            4.1. component.destroy();
+                        5. "on | un" used to tie event handlers
+                            5.1. comp1.on("eventName",function(){...},scope)
+                                Example: component.on("click", function(){}, this);
+                */
+
+                /*
+                    here are some events:
+                        Added 
+                        Removed 
+                        beforerender 
+                        render 
+                        afterrender 
+                        beforedestroy 
+                        destroy 
+                        beforeactivate 
+                        activate 
+                        beforedeactivate 
+                        deactivate 
+                        beforeshow 
+                        show 
+                        beforehide
+                        hide
+                */
+
+        	});       
         });
     </script>
 </head>
