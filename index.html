@@ -1,76 +1,70 @@
 <!DOCTYPE html>
-<head>
-    <link href="./resources/ext/ext-all.css" rel="stylesheet" type="text/css" />
-    <script src="./resources/ext/ext-all.js" type="text/javascript"></script>
-    <script>
-        Ext.onReady(function(){
-        	Ext.create("Ext.Panel", {
-        		title: "Panel Title",
-        		items: [
-        			Ext.create("Ext.form.field.Text", {
-        				fieldLabel: "FieldLabel",
-                        /*
-                            All components have a dynamically generated id, but you can assign your own as follows
-                            though this is not recommended because as the application is growing you can have
-                            duplicated id's
-                        */    
-        				id: "myFieldLabel"
-        			}),
-        			Ext.create("Ext.Button", {
-        				text: "Click",
-        				handler: function() {
-        					Ext.Msg.alert(Ext.getCmp("myFieldLabel").getValue());
-        				}
-        			})
-        		],
-                /*
-                    renderTo is used to indicate where a component is going to be displayed, two common ways to use it are:
-                        1. renderTo: Ext.getBody()
-                        2. renderTo: Ext.get(componentId)
-                */
-        		renderTo: Ext.getBody();
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Carlos Rodriguez | Full Stack Developer</title>
+    <link rel="stylesheet" href="../treehouse/resources/css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Dancing+Script' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../treehouse/resources/css/main.css">
+    <link rel="stylesheet" href="../treehouse/resources/css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../treehouse/resources/angular/angular.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="index.html" id="logo">
+        <h1>Carlos Rodriguez</h1>
+        <h2>Full Stack Developer</h2>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="../treehouse/index.html">About</a></li>
+          <li><a href="../treehouse/portfolio.html">Portfolio</a></li>
+          <li><a href="../treehouse/contact.html">Contact</a></li>
+          <li><a href="../treehouse/angular.html">Angular.js</a></li>
+          <li><a href="http://docs.sencha.com/extjs/4.2.0/#!/api">EXTjs Docs</a><li>
+          <li><a href="../extjs-examples/index.html" class="selected">EXTjs</a><li>
+          <li><a href="./extjsdoc/index.html">Node</a><li>
+          <li><a href="./extjsdoc/index.html">Grunts</a><li>
+          <li><a href="./extjsdoc/index.html">Dojo</a><li>
+          <li><a href="./extjsdoc/index.html">Rasp&Ard</a><li>
+          <li><a href="./extjsdoc/index.html">IoT</a><li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+      <section>
+        <h3>ExtJS</h3>
+        <p>ExtJS is a really convenient and easy to use framework, it goes in the same category than Dojo Framework, and it's quite versatile. If you have worked with Dojo you will find ExtJS pretty straightforward.</p> 
 
-                /*
-                    There's also a set of modifiers that can be used with components through dot notation:
-                        1. "up" this can be used in two ways:
-                            1.1. component.up("Panel"); //Will return the first Panel component in the hierarchy of the component
-                            1.2. component.up(); //this will return the immediate parent of the component
-                        2. "enable | disable" used to enable or disable components
-                            2.1. component.enable();
-                            2.2. component.disable();
-                        3. "show | hide" used to display or hide a component
-                            3.1. component.hide();
-                            3.2. component.show();
-                        4. "destroy" removes the component from the DOM tree
-                            4.1. component.destroy();
-                        5. "on | un" used to tie event handlers
-                            5.1. comp1.on("eventName",function(){...},scope)
-                                Example: component.on("click", function(){}, this);
-                */
+        <p>ExtJS is Object Oriented Javascript!</p>
 
-                /*
-                    here are some events:
-                        Added 
-                        Removed 
-                        beforerender 
-                        render 
-                        afterrender 
-                        beforedestroy 
-                        destroy 
-                        beforeactivate 
-                        activate 
-                        beforedeactivate 
-                        deactivate 
-                        beforeshow 
-                        show 
-                        beforehide
-                        hide
-                */
-
-        	});       
-        });
-    </script>
-</head>
-<body>
-</body>
+        <h3>Examples:</h3>
+          <ul>
+            <li><a href="resources/custom-js/menu/testMenu.html">Simple menu</a></li>
+            <li><a href="resources/custom-js/panel/panel.html">Simple panel</a></li>
+            <li><a href="resources/custom-js/window/testwindow.html">Simple window</a></li>
+            <li><a href="resources/custom-js/formpanel/formPanel.html">Simple form panel</a></li>
+            <li><a href="resources/custom-js/toolbar/toolbar.html">Simple tool bar</a></li>
+            <li><a href="resources/custom-js/viewport/viewport.html">Viewport (Whole screen)</a></li>
+          </ul>
+        <h3>Layout examples:</h3>
+        <ul>
+            <li><a href="resources/custom-js/container/fitLayout.html">Fit Layout</a></li>
+            <li><a href="resources/custom-js/container/anchorLayout.html">Anchor Layout</a></li>
+            <li><a href="resources/custom-js/container/boxLayout.html">Box Layout</a></li>
+            <li><a href="resources/custom-js/container/accordionLayout.html">Accordion Layout</a></li>
+            <li><a href="resources/custom-js/container/tableLayout.html">Table Layout</a></li>
+            <li><a href="resources/custom-js/container/columnLayout.html">Column Layout</a></li>
+            <li><a href="resources/custom-js/container/borderLayout.html">Border Layout</a></li>
+            <li><a href="resources/custom-js/container/cardLayout.html">Card Layout</a></li>
+        </ul>
+      </section>
+      <footer>
+        <a href="http://mx.linkedin.com/in/carlucks"><img src="../treehouse/resources/img/linkedin.png" alt="Linkedin Logo" class="social-icon"></a>
+        <a href="http://github.com/itjrodrigu"><img src="../treehouse/resources/img/github.png" alt="Git Logo" class="social-icon"></a>
+        <p>&copy; 2014 Carlos Rodriguez.</p>
+      </footer>
+    </div>
+  </body>
 </html>

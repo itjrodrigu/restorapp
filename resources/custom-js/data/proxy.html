@@ -18,29 +18,30 @@
 			Ext.onReady(function(){
 				Ext.define("Country", {
 					extend: "Ext.data.Model",
-					fields: [
-						"name",
-						"capital",
-						"population"
-					]
+					fields: ["name", "capital", "population"],
+					idProperty: "name",
+					proxy: {
+						type: "memory",
+						data: {
+							country: {
+								name: "France",
+								capital: "Paris",
+								population: 54321541
+							}
+						},
+						reader: {
+							type: "json",
+							root: "country"
+						}
+					}
 				});
 
-				var france = Ext.create("Country", {
-					//assigning an instance id but this is not required, is just demonstrative
-					id: "FRA",
-
-					/*
-						Also a field can be declared as id through: "idProperty" property:
-						idProperty: "name"
-					*/
-					
-					name: "France",
-					capital: "Paris",
-					population: "632589361"
+				Country.load("France", {
+					success: function(record){
+						console.log(record.get("capital"));
+						console.log(record.get("population"));
+					}
 				});
-
-				console.log(france.get("name") + " capital is " + france.get("capital") + " and population is: " + france.get("population") + " people.");
-				console.log("Country instance id is: " + france.getId());
 			});
 		</script>
 	</head>

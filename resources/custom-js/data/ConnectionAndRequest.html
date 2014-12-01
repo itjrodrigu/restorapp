@@ -17,15 +17,15 @@
 			*/
 			Ext.onReady(function(){
 				Ext.create("Ext.data.Connection").request(
-						Ext.create("Ext.data.Request", {
-							url: "data.txt",
-							success: function(xhr){
-								console.log(xhr.responseText);	
-							},
-							failure: function(xhr){
-								console.log("Error" + xhr.statusText)
-							}
-						}));
+					Ext.create("Ext.data.Request", {
+						url: "data.txt",
+						success: function(xhr){
+							console.log(xhr.responseText);	
+						},
+						failure: function(xhr){
+							console.log("Error" + xhr.statusText);
+						}
+				}));
 			});
 		</script>
 	</head>
