@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<link href="../../ext/ext-all.css" rel="stylesheet" type="text/css">
+		<script src="../../ext/ext-all.js" type="text/javascript"></script>
+		<script>
+			Ext.onReady(function(){
+				Ext.create("Ext.panel.Panel", {
+					padding: 30,
+					id: "main",
+					 /* 
+					 	Card layout: Only one child panel is shown at a time, treats its components as a collection of cards.
+
+					 	Perhaps the most important property it has is: "activeItem" which determines what items is to be displayed.
+					*/
+					layout: "card",
+					renderTo: Ext.getBody(),
+					items: [
+						{
+							xtype: "panel",
+							title: "Screen 1",
+							items: [
+								{
+									xtype: "button",
+									text: "Go to screen 2",
+									handler: function(){
+										//passing panel id as parameter
+										Ext.getCmp("main").getLayout().setActiveItem("secondScreen");
+									}
+								}
+							]
+						},
+						{
+							xtype: "panel",
+							title: "Screen 2",
+							id: "secondScreen",
+							items: [
+								{
+									xtype: "button",
+									text: "Go to screen 3",
+									handler: function(){
+										//passing panel number as parameter
+										Ext.getCmp("main").getLayout().setActiveItem(2);
+									}
+								}
+							]
+						},
+						{
+							xtype: "panel",
+							title: "Screen 3",
+							id: "thirdScreen"
+						}
+					]
+				});
+			});
+		</script> 
+	</head>
+	<body>
+	</body>
+</html>

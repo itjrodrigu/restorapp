@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<link href="../../ext/ext-all.css" rel="stylesheet" type="text/css">
+		<script src="../../ext/ext-all.js" type="text/javascript"></script>
+		<script>
+			Ext.onReady(function(){
+				Ext.create("Ext.panel.Panel", {
+					title: "Border layout",
+					padding: 30,
+					id: "main",
+					height: 500,
+					width: 400,
+					 /* 
+					 	Border layout: Is the star container and components are arranged in regions.
+
+					 	You can have Footer, Header or Cardinal based and there's a central region, which MUST be configured.
+					*/
+					layout: "border",
+					renderTo: Ext.getBody(),
+					items: [
+						{
+							xtype: "panel",
+							html: "top",
+							region: "north"
+						},
+						{
+							xtype: "panel",
+							html: "main content",
+							region: "center"
+						},
+						{
+							xtype: "panel",
+							html: "Side bar",
+							collapsible: true,
+							split: true,
+							region: "west"
+						}
+					]
+				});
+			});
+		</script> 
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<link href="../../ext/ext-all.css" rel="stylesheet" type="text/css">
+		<script src="../../ext/ext-all.js" type="text/javascript"></script>
+		<script>
+			/*
+				Ext.data.Connection: Establishes the connection to the server, sends the requests, and gives you the response
+				Ext.data.Request: Encapsulates the request data sent to the server
+				Ext.data.Model: Represents the object or a record or a row.
+				Ext.data.Field: Represents the fields or columns in a row
+				Ext.data.validations: Provides a set of validation functions
+				Ext.data.association.Association: Represents the association relationships between Model classes 
+				Ext.data.Store: Represents the data store that contains a collection of records or Model objects
+				Ext.data.proxy.Proxy: The class that is used to fetch data from a data source
+				Ext.data.reader.Reader: he class that’s used to read the data and convert it to a Model 
+				Ext.data.writer.Writer: Write data back to the data source.
+			*/
+			Ext.onReady(function(){
+				Ext.create("Ext.data.Connection").request(
+						Ext.create("Ext.data.Request", {
+							url: "data.txt",
+							success: function(xhr){
+								console.log(xhr.responseText);	
+							},
+							failure: function(xhr){
+								console.log("Error" + xhr.statusText)
+							}
+						}));
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

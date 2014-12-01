@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<link href="../../ext/ext-all.css" rel="stylesheet" type="text/css">
+		<script src="../../ext/ext-all.js" type="text/javascript"></script>
+		<script>
+			Ext.onReady(function(){
+				Ext.create("Ext.panel.Panel", {
+					height: 300,
+					width: 300,
+					title: "Accordion Layout",
+					/*
+						Accordion layout:
+							Extension of VBox layout. provides a set of panels positioned vertically, and provides for these panels collapse and expand features.
+					*/
+					layout: {
+						type: "accordion",
+						multi: true
+					},
+					items: [
+						{
+							html: "Inbox contents"
+						},
+						{
+							title: "Outbox",
+							html: "Outbox contents"
+						},
+						{
+							title: "Sent Items",
+							html: "Sent Items"
+						},
+					],
+					renderTo: Ext.getBody()
+				});
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

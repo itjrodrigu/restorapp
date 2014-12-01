@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<link href="../../ext/ext-all.css" rel="stylesheet" type="text/css">
+		<script src="../../ext/ext-all.js" type="text/javascript"></script>
+		<script>
+			Ext.onReady(function(){
+				Ext.create("Ext.panel.Panel", {
+					 /* 
+					 	Fit layout: Occupy space entirely to container's size, it is commonly used for a single item, it's the base for card layout
+					*/
+					layout: "fit",
+					renderTo: Ext.getBody(),
+					height: '100%',
+					width: '100%',
+					title: "Fit Layout",
+					items: [
+						{
+							xtype: "textfield",
+							fieldLabel: "Email"
+						}
+					]
+				});
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

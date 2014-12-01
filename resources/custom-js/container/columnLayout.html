@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<link href="../../ext/ext-all.css" rel="stylesheet" type="text/css">
+		<script src="../../ext/ext-all.js" type="text/javascript"></script>
+		<script>
+			Ext.onReady(function(){
+				Ext.create("Ext.panel.Panel", {
+					title: "Column layout",
+					height: 200,
+					width: 600,
+					 /* 
+					 	Column layout: Arranges components in columns starting from letf to right. 
+					 	////NOTE: the sum of all component's width must be equal to the total width of the column container.
+					*/
+					layout: "column",
+					defaults: { margin: "10"},
+					renderTo: Ext.getBody(),
+					items: [
+						{
+							title: "Folder list",
+							html: "Folder list content",
+							columnWidth: 0.20
+						},
+						{
+							title: "Inbox",
+							html: "Inbox contents",
+							columnWidth: 0.30
+						},
+						{
+							html: "Mail contents",
+							columnWidth: 0.50
+						}
+					]
+				});
+			});
+		</script> 
+	</head>
+	<body>
+	</body>
+</html>

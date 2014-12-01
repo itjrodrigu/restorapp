@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<link href="../../ext/ext-all.css" rel="stylesheet" type="text/css">
+		<script src="../../ext/ext-all.js" type="text/javascript"></script>
+		<script>
+			Ext.onReady(function(){
+				Ext.create("Ext.panel.Panel", {
+					title: "VBox Panel",
+					height: 200,
+					width: 400,
+						/*
+							Box layout: Base class for VBox and HBox.
+						*/
+					layout: {
+						type: "hbox",
+						pack: "center",
+						align: "center"
+					},
+					defaults: {xtype: "button", margin:"10"},
+					items: [
+						{text: "Button 1"},
+						{text: "Button 2"},
+						{text: "Button 3"}
+					], 
+					renderTo: Ext.getBody(),
+				});
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

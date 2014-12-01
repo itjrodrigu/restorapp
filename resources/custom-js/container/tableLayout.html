@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<link href="../../ext/ext-all.css" rel="stylesheet" type="text/css">
+		<script src="../../ext/ext-all.js" type="text/javascript"></script>
+		<script>
+			Ext.onReady(function(){
+				Ext.create("Ext.panel.Panel", {
+					height: 200,
+					width: 200,
+					 /* 
+					 	Table layout: Renders a HTML table with all of its attributes.
+					*/
+					layout: {
+						type: "table",
+						columns: 2
+					},
+					defaults: {
+						xtype: "button",
+						margin: "10"
+					},
+					items: [
+						{text: "A"},
+						{text: "B"},
+						{text: "C"},
+						{text: "D"},
+						{text: "E"},
+						{text: "F"},
+						{text: "G"},
+					],
+					renderTo: Ext.getBody(),
+				});
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
